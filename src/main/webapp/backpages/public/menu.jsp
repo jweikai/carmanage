@@ -9,6 +9,8 @@
  </ul>
    <ul>
   <li><a href="standard_list.action"><i class="productCat"></i><em>停车收费管理</em></a></li>
+  <li><a href="anno_list.action"><i class="productCat"></i><em>公告信息管理</em></a></li>
+  <li><a href="car_list.action"><i class="productCat"></i><em>停车记录管理</em></a></li>
  </ul>
  <ul class="bot">
   <li><a href="root_list.action"><i class="manager"></i><em>网站管理员</em></a></li>

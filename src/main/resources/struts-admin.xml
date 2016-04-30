@@ -2,6 +2,16 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="admin" namespace="/admin" extends="common">
+		<action name="car_*" class="carInfoAction" method="{1}">
+			<result name="list">/backpages/car/list.jsp</result>			
+			<result name="saveUI">/backpages/car/save.jsp</result>
+			<result name="toList" type="redirectAction">car_list</result>			
+		</action>
+		<action name="anno_*" class="announcementInfoAction" method="{1}">
+			<result name="list">/backpages/announcement/list.jsp</result>			
+			<result name="saveUI">/backpages/announcement/save.jsp</result>
+			<result name="toList" type="redirectAction">announcement_list</result>			
+		</action>
 		<action name="standard_*" class="standardAction" method="{1}">
 			<result name="list">/backpages/standard/list.jsp</result>			
 			<result name="saveUI">/backpages/standard/save.jsp</result>
