@@ -69,9 +69,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-				<prop key="hibernate.max_fetch_depth">1</prop>				
-				<!-- <prop key="hibernate.jdbc.fetch_size">10</prop>-->
-				<!-- <prop key="hibernate.jdbc.batch_size">10</prop>-->
+				<prop key="hibernate.max_fetch_depth">1</prop>
+				<!-- <prop key="hibernate.jdbc.fetch_size">10</prop> -->
+				<!-- <prop key="hibernate.jdbc.batch_size">10</prop> -->
 				<!-- <prop key="hibernate.current_session_context_class">thread</prop> --><!-- jta thread managed -->
 				<!-- <prop key="hibernate.connection.SetBigStringTryClob">true</prop> --><!-- 大字符串 -->
 			</props>
@@ -85,11 +85,8 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 
 		<!-- 自动扫描hbm方式配置的hibernate文件和.hbm文件 -->
-		<!-- <property name="mappingDirectoryLocations">
-			<list>
-				<value>classpath:sys/po</value>
-			</list>
-		</property> -->
+		<!-- <property name="mappingDirectoryLocations"> <list> <value>classpath:sys/po</value> 
+			</list> </property> -->
 	</bean>
 
 	<!-- 配置事务管理器 -->
@@ -99,28 +96,35 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	</bean>
 
 	<!-- 注解方式配置事物 -->
-	<tx:annotation-driven  transaction-manager="hibernateTransactionManager" />
-	
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
+
 
 	<!-- 拦截器方式配置事物 -->
 	<tx:advice id="transactionAdvice" transaction-manager="hibernateTransactionManager">
 		<tx:attributes>
-			<tx:method name="add*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="save*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="edit*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="modify*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="update*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="delete*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="tran*" propagation="REQUIRED" rollback-for="Throwable"/>
-			<tx:method name="*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Throwable" />
+			<tx:method name="save*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="edit*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="modify*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="tran*" propagation="REQUIRED"
+				rollback-for="Throwable" />
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
 	<bean id="druid-stat-interceptor"
 		class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
 	</bean>
-	
+
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* com.ouyan.service..*.*(..))" />
+		<aop:pointcut id="transactionPointcut"
+			expression="execution(* com.ouyan.service..*.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut"
 			advice-ref="transactionAdvice" />
 		<aop:advisor pointcut-ref="transactionPointcut"

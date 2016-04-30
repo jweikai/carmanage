@@ -7,6 +7,6 @@ import com.ouyan.model.Deleteinfo;
 import com.ouyan.service.DeleteInfoService;
 
 @Service
-public class DeleteInfoServiceImpl extends BaseDaoImpl<Deleteinfo> implements DeleteInfoService{
+public class DeleteInfoServiceImpl extends BaseDaoImpl<Deleteinfo> implements DeleteInfoService {
 	
 }

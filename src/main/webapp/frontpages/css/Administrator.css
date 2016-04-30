@@ -1,0 +1,30 @@
+#operate .bg-black {
+	background-color: #303030;
+	color: #ffffff;
+}
+#operate .bg-red {
+	background-color: #eb5424;
+	color: #ffffff;
+}
+#operate .title {
+	padding: 100px 60px 60px 60px;
+}
+#operate h3 {
+	padding-bottom: 60px;
+}
+#operate .fa {
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 40px;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	transition: all 0.4s ease-in-out;
+	margin-top: 40px;
+}
+#operate .fa:hover {
+	background-color: #ffffff;
+	border-radius: 50%;
+	color: #303030;
+}

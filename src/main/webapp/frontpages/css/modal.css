@@ -1,0 +1,36 @@
+.modal-dialog-verify{
+	position: absolute;
+	vertical-align: middle;
+	width: 600px;
+	left: ;
+	top: ;
+}
+.modal-body-verify{
+	border: none;
+}
+.modal-content-verify{
+	height: 395px;
+}
+.bg-erroMesg{
+	margin-left: 62px;
+	margin-top: 2.5%;
+	width: 475px;
+	max-height: 265px;
+	background-color: #F5F5F5;
+	border-radius: 6px;
+}
+.errorMesg{
+	line-height: 29px;
+	font-size: 20px;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+.modal-title-verify{
+	margin-left: 5%;
+}
+.confirm{
+	margin-top: 3%;
+	font-size: 20px;
+	width: 90px;
+}
+

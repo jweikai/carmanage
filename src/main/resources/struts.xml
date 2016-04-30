@@ -32,8 +32,20 @@
         
 	<include file="struts-common.xml"></include>	
 	<include file="struts-admin.xml"></include>
+	
 	<package name="front" namespace="/" extends="common">
-		
+		<action name="*" class="indexAction" method="{1}">
+			<result name="index">frontpages/index.jsp</result>
+			<result name="register">frontpages/register.jsp</result>
+			<result name="user">frontpages/user.jsp</result>
+			<result name="userinfo">frontpages/userInfo.jsp</result>
+			<result name="admin">frontpages/administrator.jsp</result>
+			<result name="carport">frontpages/carportexamine.jsp</result>
+			<result name="reser">frontpages/reservation.jsp</result>
+			<result name="userUpdate">frontpages/useralert.jsp</result>
+			<result name="pay">frontpages/userPay.jsp</result>
+			<result name="loginerror">frontpages/loginerror.jsp</result>
+		</action>
 	</package>
 	
 </struts>
