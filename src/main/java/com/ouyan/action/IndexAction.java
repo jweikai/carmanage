@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.ouyan.Const;
 import com.ouyan.action.base.BaseAction;
 import com.ouyan.model.Carportinfo;
 import com.ouyan.model.Userinfo;
@@ -35,7 +36,7 @@ public class IndexAction extends BaseAction<Userinfo> {
 
 	@Autowired
 	private UserinfoService userinfoService;
-	
+
 	@Autowired
 	private CarportinfoService carportinfoService;
 
@@ -56,11 +57,13 @@ public class IndexAction extends BaseAction<Userinfo> {
 		if (!userinfo.getUserPassword().equals(model.getUserPassword())) {
 			return "loginerror";
 		}
+		getSession().setAttribute(Const.LOGIN_USER_SESSION_KEY, userinfo);
 		if (loginAccessation == 0) {
 			return "user";
 		} else if (loginAccessation == 1) {
 			return "admin";
 		}
+
 		return "login";
 	}
 
@@ -96,6 +99,10 @@ public class IndexAction extends BaseAction<Userinfo> {
 	 * @return
 	 */
 	public String userinfo() {
+		model = getCurrentUser();
+
+		ActionContext.getContext().put("User", model);
+
 		return "userinfo";
 	}
 
@@ -117,21 +124,21 @@ public class IndexAction extends BaseAction<Userinfo> {
 		QueryHelper helper = new QueryHelper(Carportinfo.class, "c");
 		helper.addCondition("carportLocation like 'A%'");
 		List<Carportinfo> a = carportinfoService.findByQueryHelp(helper);
-		
+
 		helper.addCondition("carportLocation like 'B%'");
 		List<Carportinfo> b = carportinfoService.findByQueryHelp(helper);
-		
+
 		helper.addCondition("carportLocation like 'C%'");
 		List<Carportinfo> c = carportinfoService.findByQueryHelp(helper);
-		
+
 		helper.addCondition("carportLocation like 'D%'");
 		List<Carportinfo> d = carportinfoService.findByQueryHelp(helper);
-		
+
 		ActionContext.getContext().put("a", a);
 		ActionContext.getContext().put("b", b);
 		ActionContext.getContext().put("c", c);
 		ActionContext.getContext().put("d", d);
-		
+
 		return "carport";
 	}
 
@@ -145,6 +152,20 @@ public class IndexAction extends BaseAction<Userinfo> {
 	}
 
 	public String userUpdate() {
+		model = getCurrentUser();
+
+		ActionContext.getContext().put("User", model);
+		return "userUpdate";
+	}
+	
+	public String udpate() {
+		model = userinfoService.findByName(model.getUserName());
+		userinfoService.update(model);
+		
+		model = getCurrentUser();
+
+		ActionContext.getContext().put("User", model);
+		
 		return "userUpdate";
 	}
 

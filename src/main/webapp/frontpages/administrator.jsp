@@ -93,18 +93,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
       <div class="col-md-8 col-sm-8">
         	<div id=""  class="col-md-6 col-sm-6 bg-black"> 
-        		<a><i class="fa fa-user"></i>
+        		<a href="/carmanage/carport.action?authorty=0"><i class="fa fa-user"></i>
           		<h3>车位查询</h3></a>
         		
         	</div>
-        	<div class="col-md-6 col-sm-6 bg-red"> 
-        		<a ><i class="fa fa-cloud"></i>
-          		<h3>公告信息管理</h3></a>
-        	</div>
-        	<div class="col-md-6 col-sm-6 bg-red"> <a href=""><i class="fa fa-car"></i>
-         		 <h3>停车记录管理</h3></a>
-        	</div>
-        <div class="col-md-6 col-sm-6 bg-black"> <a href="#price"><i class="fa fa-globe"></i>
+        <div class="col-md-6 col-sm-6 bg-black"> <a href="/carmanage/pay.action"><i class="fa fa-globe"></i>
           <h3>账户额度管理</h3></a>
         </div>
       </div>
@@ -133,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li>充值即将相应存储卡的钱</li>
 						<li>存入您个人所在的用户</li>
 					</ul>
-					<button class="btn btn-warning">开始进行</button>
+					<button class="btn btn-warning" onclick="showPay()">开始进行</button>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-9">
@@ -149,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li>提现即将您网站中账户的钱</li>
 						<li>进行提取存入您其他银行账户中</li>
 					</ul>
-					<button class="btn btn-warning">开始进行</button>
+					<button class="btn btn-warning" onclick="showPay()">开始进行</button>
 				</div>
 			</div>
 		</div>
@@ -210,4 +203,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</footer>
 </body>
 
+<<script type="text/javascript">
+	function showPay() {
+		window.location.href = "/carmanage/pay.action";
+	}
+</script>
 </html>

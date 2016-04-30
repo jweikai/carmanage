@@ -41,11 +41,11 @@
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button>
-      <a href="#" class="navbar-brand">${User.username }</a></div>
+      <a href="#" class="navbar-brand">${User.userName }</a></div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/carmanage/returnuser.action?id=${User.userid}" class="smoothScroll">返回</a></li>
-		<li><a href="/carmanage/useroperate.action?id=${User.userid}" class="smoothScroll">修改个人信息</a></li>        
+<%--         <li><a href="/carmanage/returnuser.action?id=${User.userId}" class="smoothScroll">返回</a></li> --%>
+		<li><a href="/carmanage/userUpdate.action?id=${User.userId}" class="smoothScroll">修改个人信息</a></li>        
       </ul>
     </div>
   </div>
@@ -56,33 +56,33 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4 title">
-        <h2>${User.username }</h2>
+        <h2>${User.userName }</h2>
         <hr>
         <p>您的个人信息如旁所示：</p>
       </div>
       <div class="col-md-8 col-sm-8 serviceChoice">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-lg-6 bg-black text-center">
-					<h3>用户名：${User.username }</h3>
+					<h3>用户名：${User.userName }</h3>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-6 bg-red text-center">
-					<h3>生日：${User.userbirthday }</h3>
+					<h3>生日：${User.userBirthday }</h3>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-lg-6 bg-black text-center">
-					<h3>性别：${User.usersex }</h3>
+					<h3>性别：${User.userSex }</h3>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-6 bg-red text-center">
-					<h3>手机号码：${User.usertel }</h3>
+					<h3>手机号码：${User.userTel }</h3>
 				</div>
 			</div>
 			<div class="row">
 					<div class="col-md-6 col-sm-6 col-lg-6 bg-black text-center">
-					<h3>拥有车名：${User.usercarname }</h3>
+					<h3>拥有车名：${User.userCarName }</h3>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-6 bg-red text-center">
-					<h3>拥有车牌名：${User.usercarboardnum }</h3>
+					<h3>拥有车牌名：${User.userCarBoardNum }</h3>
 				</div>
 			</div>
 

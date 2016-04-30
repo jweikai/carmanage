@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button>
-      <a href="#" class="navbar-brand">${User.username }</a></div>
+      <a href="#" class="navbar-brand">${user.userName }</a></div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <!--<li><a href="#home" class="smoothScroll">主页</a></li>-->
@@ -87,18 +87,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
       <div class="col-md-8 col-sm-8">
         	<div id=""  class="col-md-6 col-sm-6 bg-black"> 
-        		<a href="/carmanage/useroperate.action?id=${User.userid}"><i class="fa fa-user"></i>
+        		<a href="/carmanage/userUpdate.action?id=${User.userid}"><i class="fa fa-user"></i>
           		<h3>修改个人信息</h3></a>
         		
         	</div>
         	<div class="col-md-6 col-sm-6 bg-red"> 
-        		<a href="/carmanage/userexamine.action?id=${User.userid}"><i class="fa fa-cloud"></i>
+        		<a href="/carmanage/userinfo.action?id=${User.userid}"><i class="fa fa-cloud"></i>
           		<h3>查看个人信息</h3></a>
         	</div>
-        	<div class="col-md-6 col-sm-6 bg-red"> <a><i class="fa fa-car"></i>
+        	<div class="col-md-6 col-sm-6 bg-red"> <a href="reser.action"><i class="fa fa-car"></i>
          		 <h3>预订车位/取消</h3></a>
         	</div>
-        <div class="col-md-6 col-sm-6 bg-black"> <a href="#price"><i class="fa fa-globe"></i>
+        <div class="col-md-6 col-sm-6 bg-black"> <a href="pay.action"><i class="fa fa-globe"></i>
           <h3>账户额度管理</h3></a>
         </div>
       </div>
