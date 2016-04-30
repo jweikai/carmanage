@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="admin" namespace="/admin" extends="common">
+		<!-- <action name="reply_*" class="replyAction" method="{1}">
+			<result name="list">/backpages/reply/list.jsp</result>			
+			<result name="saveUI">/backpages/reply/save.jsp</result>
+			<result name="toList" type="redirectAction">reply_list</result>			
+		</action>
+		<action name="posts_*" class="postsAction" method="{1}">
+			<result name="list">/backpages/posts/list.jsp</result>			
+			<result name="saveUI">/backpages/posts/save.jsp</result>
+			<result name="toList" type="redirectAction">posts_list</result>			
+		</action>
+		<action name="topic_*" class="topicAction" method="{1}">
+			<result name="list">/backpages/topic/list.jsp</result>			
+			<result name="saveUI">/backpages/topic/save.jsp</result>
+			<result name="toList" type="redirectAction">topic_list</result>			
+		</action>
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="list">/backpages/user/list.jsp</result>			
+			<result name="saveUI">/backpages/user/save.jsp</result>
+			<result name="toList" type="redirectAction">user_list</result>			
+		</action>
+		<action name="root_*" class="adminUserAction" method="{1}">
+			<result name="list">/backpages/admin/list.jsp</result>			
+			<result name="saveUI">/backpages/admin/save.jsp</result>
+			<result name="toList" type="redirectAction">root_list</result>			
+		</action>
+		
+		<action name="log_*" class="logsAction" method="{1}">
+			<result name="list">/backpages/logs/logs.jsp</result>
+		</action>
+		<action name="*" class="commonAction" method="{1}">
+			<result name="login">/backpages/login.jsp</result>
+			<result name="index">/backpages/index.jsp</result>
+			<result name="reIndex" type="redirectAction">index.action</result>
+			<result name="logout" type="redirectAction">login</result>
+		</action> -->
+	</package>	
+</struts>
