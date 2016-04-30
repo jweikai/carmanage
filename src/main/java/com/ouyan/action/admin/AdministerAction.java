@@ -13,18 +13,18 @@ import com.ouyan.utils.QueryHelper;
 
 @Controller
 @Scope("prototype")
-public class AdminUserinfoAction extends BaseAction<Userinfo>{
+public class AdministerAction extends BaseAction<Userinfo>{
 	@Autowired
-	private UserinfoService userinfoService;
+	private UserinfoService adminService;
 	public String list() {
-		QueryHelper helper = new QueryHelper(Userinfo.class, "u").addCondition("u.userJurisdiction=?", 0);
-		PageBean pageBean = userinfoService.getPageBean(pageNum, pageSize, helper);
+		QueryHelper helper = new QueryHelper(Userinfo.class, "u").addCondition("u.userJurisdiction=?", 1);
+		PageBean pageBean = adminService.getPageBean(pageNum, pageSize, helper);
 		ActionContext.getContext().getValueStack().push(pageBean);
 		return "list";
 	}
 	
 	public String editUI() {
-		Userinfo user = userinfoService.getById(model.getUserId());
+		Userinfo user = adminService.getById(model.getUserId());
 		ActionContext.getContext().getValueStack().push(user);
 		return "saveUI";
 	}
@@ -33,22 +33,22 @@ public class AdminUserinfoAction extends BaseAction<Userinfo>{
 		return "saveUI";
 	}
 	public String edit() {
-		Userinfo user = userinfoService.getById(model.getUserId());		
+		Userinfo user = adminService.getById(model.getUserId());		
 		user.setUserName(model.getUserName());
 		user.setUserBirthday(model.getUserBirthday());
 		user.setUserTel(model.getUserTel());
 		user.setUserCarName(model.getUserCarName());
 		user.setUserCarBoardNum(model.getUserCarBoardNum());
-		user.setUserJurisdiction(0);
-		userinfoService.update(user);
+		user.setUserJurisdiction(1);
+		adminService.update(user);
 		return "toList";
 	}
 	public String add() {
-		userinfoService.save(model);
+		adminService.save(model);
 		return "toList"; 
 	} 
 	public String delete() {
-		userinfoService.delete(model.getUserId());
+		adminService.delete(model.getUserId());
 		return "toList";
 	}
 }

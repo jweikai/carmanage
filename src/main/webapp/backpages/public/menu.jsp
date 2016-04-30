@@ -8,11 +8,10 @@
   <li><a href="user_list.action"><i class="nav"></i><em>用户管理</em></a></li>
  </ul>
    <ul>
-  <li><a href="topic_list.action"><i class="productCat"></i><em>主题管理</em></a></li>
-  <li><a href="posts_list.action"><i class="product"></i><em>论坛管理</em></a></li>
+  <li><a href="standard_list.action"><i class="productCat"></i><em>停车收费管理</em></a></li>
  </ul>
  <ul class="bot">
   <li><a href="root_list.action"><i class="manager"></i><em>网站管理员</em></a></li>
-  <li><a href="log_list.action"><i class="managerLog"></i><em>操作记录</em></a></li>
+  <li><a href="deleteinfo_list.action"><i class="managerLog"></i><em>删除记录</em></a></li>
  </ul>
 </div></div>

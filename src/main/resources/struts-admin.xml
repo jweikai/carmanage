@@ -2,6 +2,19 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="admin" namespace="/admin" extends="common">
+		<action name="standard_*" class="standardAction" method="{1}">
+			<result name="list">/backpages/standard/list.jsp</result>			
+			<result name="saveUI">/backpages/standard/save.jsp</result>
+			<result name="toList" type="redirectAction">standard_list</result>			
+		</action>
+		<action name="deleteinfo_*" class="deleteInfoAction" method="{1}">
+			<result name="list">/backpages/deleteinfo/list.jsp</result>
+		</action>
+		<action name="root_*" class="administerAction" method="{1}">
+			<result name="list">/backpages/admin/list.jsp</result>			
+			<result name="saveUI">/backpages/admin/save.jsp</result>
+			<result name="toList" type="redirectAction">root_list</result>			
+		</action>
 		<action name="user_*" class="adminUserinfoAction" method="{1}">
 			<result name="list">/backpages/user/list.jsp</result>			
 			<result name="saveUI">/backpages/user/save.jsp</result>

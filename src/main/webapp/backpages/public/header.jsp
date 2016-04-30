@@ -4,7 +4,7 @@
   <div class="logo"><a href="index.action"><img src="${pageContext.request.contextPath}/backpages/images/dclogo.gif" alt="logo"></a></div>
   <div class="nav">
    <ul class="navRight">
-    <li class="M noLeft"><a href="JavaScript:void(0);">您好，${LOGIN_USER_SESSION_KEY.name }</a>  
+    <li class="M noLeft"><a href="JavaScript:void(0);">您好，${LOGIN_USER_SESSION_KEY.userName }</a>  
      <div class="drop mUser">
       <a href="manager.php?rec=edit&id=1">编辑我的个人资料</a>
      </div>

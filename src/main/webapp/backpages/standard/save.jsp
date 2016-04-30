@@ -14,32 +14,23 @@
  	<%@include file="../public/menu.jsp" %>	
  <div id="dcMain">
    <!-- 当前位置 -->
-	<div id="urHere">停车场 管理中心<b>></b><strong>网站管理员</strong> </div>   <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-    <h3><a href="root_list.action" class="actionBtn">返回列表</a>网站管理员</h3>
-            <s:form action="root_%{userId == null ? 'add' : 'edit' }" method="post">
-            <s:hidden name="userId"></s:hidden>
-            <s:hidden name="userJurisdiction" value="1"></s:hidden>
+	<div id="urHere">停车场 管理中心<b>></b><strong>费用</strong> </div>   <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+    <h3><a href="standard_list.action" class="actionBtn">返回列表</a>费用</h3>
+            <s:form action="standard_%{standardId == null ? 'add' : 'edit' }" method="post">
+            <s:hidden name="standardId"></s:hidden>
      <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
       <tr>
-       <td width="100" align="right">管理员名称</td>
+       <td width="100" align="right">普通车辆费用</td>
        <td>
-        <s:textfield type="text" name="userName" size="40" cssClass="inpMain"></s:textfield>
+        <s:textfield type="text" name="standardNormal" size="40" cssClass="inpMain"></s:textfield>
        </td>
       </tr>
       <tr>
-       <td width="100" align="right">用户电话</td>
+       <td width="100" align="right">打折卡扣费用</td>
        <td>
-        <s:textfield type="text" name="userTel" size="40" cssClass="inpMain"></s:textfield>
+        <s:textfield type="text" name="standardCard" size="40" cssClass="inpMain"></s:textfield>
        </td>
       </tr>
-      <s:if test="%{userId == null}">
-      <tr>
-       <td align="right">密码</td>
-       <td>
-        <s:password name="userPassword" size="40" cssClass="inpMain"></s:password>
-       </td>
-      </tr>
-      </s:if>
       <tr>
        <td></td>
        <td>

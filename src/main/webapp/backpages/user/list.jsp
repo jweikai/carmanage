@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BBS 管理中心 - 用户列表 </title>
+<title>停车场 管理中心 - 用户列表 </title>
 <meta name="Copyright" content="Douco Design." />
 <%@ include file="../public/ref.jsp" %>
 </head>
@@ -13,7 +13,7 @@
  <%@include file="../public/menu.jsp" %>
  <div id="dcMain">
    <!-- 当前位置 -->
-<div id="urHere">BBS 管理中心<b>></b><strong>用户列表</strong> </div>  
+<div id="urHere">停车场 管理中心<b>></b><strong>用户列表</strong> </div>  
  <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px; ">
     <h3><a href="user_addUI.action" class="actionBtn">添加用户</a>用户列表</h3>
         <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic" style="font-size:12px;"> 
@@ -34,7 +34,7 @@
 	      <td align="center">${user.userTel }</td>
 	      <td align="center">${user.userCarName }</td>
 	      <td align="center">${user.userCarBoardNum }</td> 
-     	 <td align="center"><a href="user_editUI.action?id=${user.userId }">编辑</a> | <a href="user_delete.action?id=${user.userId }">删除</a></td>
+     	 <td align="center"><a href="user_editUI.action?userId=${user.userId }">编辑</a> | <a href="user_delete.action?userId=${user.userId }">删除</a></td>
      	</tr>
      </s:iterator>
          </table>

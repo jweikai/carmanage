@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台登陆</title>
-<script src="${pageContext.request.contextPath}/extends/js/jquery-1.10.2.min.js" type="text/javascript" ></script>
+<script src="${pageContext.request.contextPath}/backpages/js/jquery.min.js" type="text/javascript" ></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/backpages/css/register.css"/>
 </head>
 <body>
@@ -17,11 +17,11 @@
 		<form class="signup_form_form" id="signup_form" method="post" action="" data-secure-ajax-action="">
 			<div class="form_row first_row">
 				<label for="signup_email">请输入用户名</label><div id="errorTip" style="display: none;" class='tip error'></div>
-				<input type="text" name="name" placeholder="请输入用户名" id="signup_name" data-required="required">
+				<input type="text" name="userName" placeholder="请输入用户名" id="signup_name" data-required="required">
 			</div>
 			<div class="form_row">
 				<label for="signup_password">请输入密码</label><!-- <div class='tip error'></div> -->
-				<input type="password" name="pass" placeholder="请输入密码" id="signup_password" data-required="required">
+				<input type="password" name="userPassword" placeholder="请输入密码" id="signup_password" data-required="required">
 			</div>
 		</form>
 	</div>
@@ -66,27 +66,7 @@ $(function(){
     	if (e.keyCode == 13 ) {
     		$(".login-btn").trigger('click');
     	}
-    });
-    var rootpath = '/bbs/';
-	$("#signup_name").keyup(function(e) {
-		$.ajax({
-			url: 'enterSearch.action',
-			type: 'POST',
-			data: {
-				name: $(this).val()
-			},
-			dataType: 'json',
-			success: function(resp) {	
-				var $admin = $("#admin");
-				if ( resp.success ) {					
-					var userinfo = resp.obj.userinfoVO;
-					$admin.attr('src', rootpath + userinfo.head);
-				}else {
-					$admin.attr('src', $admin.data('src'));
-				} 
-			}
-		});
-	});
+    });   
 })
 
 
