@@ -5,9 +5,11 @@
 		<interceptors>
 			<interceptor name="CharacterEncodingInterceptor" class="com.ouyan.interceptor.CharacterEncodingInterceptor" />
 			<interceptor name="SessionInterceptor" class="com.ouyan.interceptor.SessionInterceptor" />
+			<interceptor name="DeleteInfoInterceptor" class="com.ouyan.interceptor.DeleteInfoInterceptor" />
 			<interceptor-stack name="myInterceptorStack">
 				<interceptor-ref name="CharacterEncodingInterceptor" />
 				<interceptor-ref name="SessionInterceptor" />
+				<interceptor-ref name="DeleteInfoInterceptor" />
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>

@@ -2,6 +2,17 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="admin" namespace="/admin" extends="common">
+		<action name="user_*" class="adminUserinfoAction" method="{1}">
+			<result name="list">/backpages/user/list.jsp</result>			
+			<result name="saveUI">/backpages/user/save.jsp</result>
+			<result name="toList" type="redirectAction">user_list</result>			
+		</action>
+		<action name="*" class="commonAction" method="{1}">
+			<result name="login">/backpages/login.jsp</result>
+			<result name="index">/backpages/index.jsp</result>
+			<result name="reIndex" type="redirectAction">index</result>
+			<result name="logout" type="redirectAction">login</result>
+		</action>
 		<!-- <action name="reply_*" class="replyAction" method="{1}">
 			<result name="list">/backpages/reply/list.jsp</result>			
 			<result name="saveUI">/backpages/reply/save.jsp</result>
@@ -31,11 +42,6 @@
 		<action name="log_*" class="logsAction" method="{1}">
 			<result name="list">/backpages/logs/logs.jsp</result>
 		</action>
-		<action name="*" class="commonAction" method="{1}">
-			<result name="login">/backpages/login.jsp</result>
-			<result name="index">/backpages/index.jsp</result>
-			<result name="reIndex" type="redirectAction">index.action</result>
-			<result name="logout" type="redirectAction">login</result>
-		</action> -->
+		 -->
 	</package>	
 </struts>

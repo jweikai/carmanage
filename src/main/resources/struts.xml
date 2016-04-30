@@ -33,19 +33,7 @@
 	<include file="struts-common.xml"></include>	
 	<include file="struts-admin.xml"></include>
 	<package name="front" namespace="/" extends="common">
-		<action name="freply_*" class="frontReplyAction" method="{1}">
-			<result name="toPosts" type="redirect">fposts_more.action?id=${id}</result>
-		</action>
-		<action name="fposts_*" class="frontPostsAction" method="{1}">
-			<result name="list">/frontpages/posts/posts.jsp</result>
-			<result name="saveUI">/frontpages/posts/save.jsp</result>
-			<result name="more">/frontpages/posts/more.jsp</result>
-			<result name="toList" type="redirectAction">fposts_list</result>
-		</action>
-		<action name="*" class="indexAction" method="{1}">
-			<result name="index">/frontpages/index.jsp</result>
-			<result name="toIndex" type="redirectAction">index</result>
-		</action>
+		
 	</package>
 	
 </struts>

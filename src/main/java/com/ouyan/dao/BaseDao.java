@@ -19,9 +19,9 @@ public interface BaseDao<T> {
 	 * 
 	 * @param id
 	 */
-	void delete(Long id);
+	void delete(Integer id);
 	
-	void delete(Long[] ids);
+	void delete(Integer[] ids);
 	
 	/**
 	 * 更新实体
@@ -33,10 +33,10 @@ public interface BaseDao<T> {
 	/**
 	 * 按id查询
 	 * 
-	 * @param id
+	 * @param integer
 	 * @return
 	 */
-	T getById(Long id);
+	T getById(Integer integer);
 
 	/**
 	 * 按id查询
@@ -44,7 +44,7 @@ public interface BaseDao<T> {
 	 * @param ids
 	 * @return
 	 */
-	List<T> getByIds(Long[] ids);
+	List<T> getByIds(Integer[] ids);
 
 	/**
 	 * 查询所有

@@ -18,6 +18,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.ouyan.Const;
+import com.ouyan.model.Userinfo;
 import com.ouyan.utils.FastjsonFilter;
 
 public abstract class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
@@ -170,9 +171,9 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	 * 
 	 * @return
 	 */
-	/*protected UserVO getCurrentUser() {
-		return (UserVO) getSession().getAttribute(Const.LOGIN_USER_SESSION_KEY);
-	}*/
+	protected Userinfo getCurrentUser() {
+		return (Userinfo) getSession().getAttribute(Const.LOGIN_USER_SESSION_KEY);
+	}
 	
 	protected void removeCurrentUser() {
 		getSession().removeAttribute(Const.LOGIN_USER_SESSION_KEY);

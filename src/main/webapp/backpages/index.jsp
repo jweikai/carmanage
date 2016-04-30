@@ -12,7 +12,7 @@
 <%@include file="public/header.jsp" %>
 <%@include file="public/menu.jsp" %> 
  <div id="dcMain"> <!-- 当前位置 -->
-<div id="urHere">bbs 管理中心</div>  <div id="index" class="mainBox" style="padding-top:18px;height:auto!important;height:550px;min-height:550px;">
+<div id="urHere">停车场 管理中心</div>  <div id="index" class="mainBox" style="padding-top:18px;height:auto!important;height:550px;min-height:550px;">
     
    <div id="douApi"></div>
       <div class="indexBox">
@@ -22,8 +22,6 @@
      <a href="javascript:void(0)" class="child1">企业荣誉</a> 
      <a href="javascript:void(0)" class="child1">发展历程</a> 
      <a href="javascript:void(0)" class="child1">联系我们</a> 
-     <a href="javascript:void(0)">人才招聘</a> 
-     <a href="javascript:void(0)">营销网络</a> 
      	<div class="clear"></div>
     </ul>
    </div>
@@ -37,11 +35,11 @@
          <tr>
           <td width="120">单页面数：</td>
           <td><strong>6</strong></td>
-          <td width="100">文章总数：</td>
+          <td width="100">用户总数：</td>
           <td><strong>10</strong></td>
          </tr>
          <tr>
-          <td>商品总数：</td>
+          <td>车辆总数：</td>
           <td><strong>15</strong></td>
           <td>系统语言：</td>
           <td><strong>zh_cn</strong></td>
@@ -94,7 +92,7 @@
      <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
       <tr>
        <td width="100px"> 贡献者： </td>
-       <td>Jiaojia</td>
+       <td>欧阳文斌</td>
       </tr>
       <tr>
        <td> 系统使用协议： </td>

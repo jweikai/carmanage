@@ -20,42 +20,30 @@
      <tr>
       <th width="30" align="center">编号</th>
       <th align="left">用户名称</th>
-      <th align="center">E-mail地址</th>
-      <th align="center">添加时间</th>
-      <th align="center">最后登录时间</th>
+      <th align="center">生日</th>
+      <th align="center">电话</th>
+      <th align="center">车名</th>
+      <th align="center">车牌号</th>
       <th align="center">操作</th>
      </tr>
-     <s:iterator value="#users" var="user">
+     <s:iterator value="recordList" var="user">
       	<tr>
-	      <td align="center">${user.id }</td>
-	      <td>${user.name}</td>
-	      <td align="center">${user.email }</td>
-	      <td align="center">2016-02-25</td>
-	      <td align="center">2016-02-26 20:53:17</td>
-     	 <td align="center"><a class="originPassBtn" href="user_originPass.action?id=${user.id }">初使化密码</a> | <a href="user_editUI.action?id=${user.id }">编辑</a> | <a href="user_delete.action?id=${user.id }">删除</a></td>
+	      <td align="center">${user.userId}</td>
+	      <td>${user.userName}</td>
+	      <td align="center">${user.userBirthday }</td>
+	      <td align="center">${user.userTel }</td>
+	      <td align="center">${user.userCarName }</td>
+	      <td align="center">${user.userCarBoardNum }</td> 
+     	 <td align="center"><a href="user_editUI.action?id=${user.userId }">编辑</a> | <a href="user_delete.action?id=${user.userId }">删除</a></td>
      	</tr>
      </s:iterator>
          </table>
-                       </div>
+     </div>
+     <%@ include file="../public/pageView.jsp" %>
  </div>
  <%@ include file="../public/footer.jsp" %>
 <div class="clear"></div> </div>
 <script type="text/javascript">
-$(function() {
-	$(".originPassBtn").click(function() {
-		$.ajax({
-			type: 'POST',
-			url: $(this).attr('href'),
-			dataType: 'json',
-			success: function(resp) {
-				if ( resp.success ) {
-					alert('修改密码为888888');
-				}
-			}
-		})
-		return false;
-	});
-});
 </script>
 </body>
 </html>
